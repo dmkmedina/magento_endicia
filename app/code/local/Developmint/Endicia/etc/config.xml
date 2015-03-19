@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<config>
+    <default>
+        <carriers>
+            <endicia>
+                <active>1</active>
+                <sallowspecific>0</sallowspecific>
+                <model>endicia/carrier_endicia</model>
+                <name>Endicia</name>
+                <title>Endicia</title>
+                <specificerrmsg>
+                    This shipping method is currently unavailable.
+                    If you would like to ship using this shipping
+                    method, please contact us.
+                </specificerrmsg>
+                <handling_type>F</handling_type>
+            </endicia>
+        </carriers>
+    </default>
+    <modules>
+        <!-- declare module's version information -->
+        <Developmint_Endicia>
+            <!-- this version number will be used for database upgrades -->
+            <version>0.1.0</version>
+        </Developmint_Endicia>
+    </modules>
+
+    <global>
+        <!-- declare model group for new module -->
+        <models>
+            <!-- model group alias to be used in Mage::getModel() -->
+            <endicia>
+                <!-- base class name for the model group -->
+                <class>Developmint_Endicia_Model</class>
+            </endicia>
+        </models>
+
+        <!-- declare resource setup for new module -->
+        <resources>
+            <!-- resource identifier -->
+            <endicia_setup>
+                <!-- specify that this resource is a setup resource and used for upgrades -->
+                <setup>
+                    <!-- which module to look for install/upgrade files in -->
+                    <module>Developmint_Endicia</module>
+                </setup>
+                <!-- specify database connection for this resource -->
+                <connection>
+                    <!-- do not create new connection, use predefined core setup connection -->
+                    <use>core_setup</use>
+                </connection>
+            </endicia_setup>
+        </resources>
+    </global>
+</config>
